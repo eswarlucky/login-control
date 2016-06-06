@@ -1,0 +1,89 @@
+<!-- Page Content -->
+<div id="page-content-wrapper">
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-12" ng-controller="Questionctrl">
+
+<h1>Simple Faqs</h1>
+
+<!-- LEFT QUESTIONS PANEL -->
+<div class="col-lg-6">
+<h2>Question and answers</h2>
+<hr>
+   <ul id="question-list">
+	 <li style="cursor:pointer" ng-repeat = "questionAns in questionList">
+	  <h2 ng-click="questionAns.showAnswer = !questionAns.showAnswer">            
+	  Q) <a class="ques">{{questionAns.question}}</a></h2>
+	   <h3 class="answ" ng-show="questionAns.showAnswer">{{questionAns.answer}}</h3>
+	</li>
+  </ul>	
+</div>
+
+<!-- RIGHT QUESTION PANEL -->
+<div class = "col-lg-6">
+<h2>Question only....</h2>
+<hr>
+
+<div style="float:left;padding:10px;margin:0 auto;">
+	<!-- LOOP.-->
+	<ul ng-repeat="questions in lists">
+		<li>Q)&nbsp;<a href="" data-toggle="modal" data-target="#myModal2" ng-click = "qusetionClick($index)" class="font-question">{{questions.question}}?</a></li>
+	</ul>
+</div>
+
+<button type="button" class="text-right col-xs-10" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></button>
+
+<!-- Modal 1 -->
+<div class="modal fade" id="myModal" role="dialog">
+<div class="modal-dialog modal-sm">
+  <div class="modal-content">
+	<div class="modal-header">
+	  <button type="button" class="close" data-dismiss="modal">&times;</button>
+	  <h4 class="modal-title">Enter Your Question</h4>
+	</div>
+	<div class="modal-body">
+	  <textarea rows="3" cols="35" ng-model="qusetionText" placeholder="Enter the Question"></textarea>
+	</div>
+	<div class="modal-footer">
+	  <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="addQuestion()">Add</button>
+	</div>
+  </div>
+</div>
+</div>
+
+<!-- MOdel 2 -->
+<div class="modal fade" id="myModal2" role="dialog">
+<div class="modal-dialog modal-sm">
+  <div class="modal-content">
+	<div class="modal-header">
+	  <button type="button" class="close" data-dismiss="modal">&times;</button>
+	  <h4 class="modal-title">Enter Your Answers..</h4>
+	</div>
+	<div class="modal-body">
+	   <textarea rows="3" cols="35" ng-model="answerText" placeholder="Enter the Answer"></textarea>
+	</div>
+	<div class="modal-footer">
+	  <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="addAnswer()">Add</button>
+	</div>
+  </div>
+</div>
+</div>
+
+                                     
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+
+<style>
+
+button.text-right {
+background: transparent;
+border: transparent;
+outline: 0;
+}
+.questions ul li{list-style-type:none;}
+</style>

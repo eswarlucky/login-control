@@ -1,0 +1,36 @@
+<div id="sidebar-wrapper">
+        
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a ui-sref=".page-home">
+                        Sample POC 
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref=".page-home">HOME <i class="fa fa-home fa-2x "></i></a>
+                </li>
+                <li>
+                    <a ui-sref=".news">NEWS <i class="fa fa-newspaper-o fa-2x   "></i></a>
+                </li>
+                <li>
+                    <a ui-sref=".blog">BLOG <i class="fa fa-th fa-2x    "></i></a>
+                </li>
+                <li>
+                    <a ui-sref=".faqs">FAQS <i class="fa fa-question fa-2x  "></i></a>
+                </li>
+                <li>
+                    <a ui-sref=".contact">CONTACT <i class="fa fa-mobile fa-2x  "></i></a>
+                </li>
+               
+            </ul>
+
+           
+        </div>
+         <a ui-sref="#menu-toggle" class="btn btn-default" id="menu-toggle" style="z-index:9999;margin:5px;display:none"><i class="fa fa-list" aria-hidden="true"></i></a>
+
+          <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
